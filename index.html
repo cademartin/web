@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function openBothURLs() {
-            window.open('https://o2tvseries.co/updates', '_blank'); // Open the first URL in a new tab
-            setTimeout(function() {
-                window.open('https://www.masterfap.net', '_blank'); // Open the second URL in a new tab
-            }, 100); // Delay to ensure both tabs open
+            const url1 = 'https://o2tvseries.co/updates';
+            const url2 = 'https://www.masterfap.net';
+
+            const newWindow1 = window.open(url1, '_blank');
+            const newWindow2 = window.open(url2, '_blank');
+
+            if (!newWindow1 || !newWindow2) {
+                document.getElementById('popup-notice').style.display = 'block';
+            }
         }
     </script>
 </head>
@@ -18,10 +23,13 @@
     <div class="glass-container">
         <h1>Welcome to the Glassmorphism Website</h1>
         <a href="#" onclick="openBothURLs(); return false;">Link to First URL</a>
+        <p id="popup-notice" style="display: none; color: red;">
+            Please allow pop-ups to open both links in separate tabs.
+        </p>
         <button id="settings-button">Settings</button>
         <a href="settings.html">Go to Settings</a>
     </div>
-    <div id="settings-panel" class="settings hidden">
+    <div id="settings-panel-1" class="settings hidden">
         <h2>Settings</h2>
         <label for="bg-color">Background Gradient Color:</label>
         <input type="color" id="bg-color" name="bg-color" value="#ffffff">
@@ -31,7 +39,7 @@
 
         <button id="apply-settings">Apply</button>
     </div>
-    <div id="settings-panel" class="settings hidden">
+    <div id="settings-panel-2" class="settings hidden">
         <h2>Settings</h2>
         <label for="bg-color">Background Gradient Color:</label>
         <input type="color" id="bg-color" name="bg-color" value="#ffffff">
