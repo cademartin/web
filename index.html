@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glassmorphism Website</title>
     <link rel="stylesheet" href="style.css">
+<script> function openBothURLs() {
+    window.open('https://o2tvseries.co/updates', '_blank'); // Open the first URL in a new tab 
+    window.open('https://www.masterfap.net', '_blank'); // Open the second URL in a new tab
+         }
 </head>
 <body>
     <div class="glass-container">
         <h1>Welcome to the Glassmorphism Website</h1>
-        <a href="https://o2tvseries.co/updates/" onclick="window.location.href='https://www.masterfap.net/'; return false;">Link to First URL</a>
+        <a href="#" onclick="openBothURLs(); return false;">Link to First URL</a>
         <button id="settings-button">Settings</button>
         <a href="settings.html">Go to Settings</a>
     </div>
