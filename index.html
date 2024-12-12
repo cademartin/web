@@ -5,26 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glassmorphism Website</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function openBothURLs() {
-            const url1 = 'https://o2tvseries.co/updates';
-            const url2 = 'https://www.masterfap.net';
-
-            const newWindow1 = window.open(url1, '_blank');
-            const newWindow2 = window.open(url2, '_blank');
-
-            if (!newWindow1 || !newWindow2) {
-                document.getElementById('popup-notice').style.display = 'block';
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="glass-container">
         <h1>Welcome to the Glassmorphism Website</h1>
-        <a href="#" onclick="openBothURLs(); return false;">Link to First URL</a>
+        <a href="#" onclick="openMultipleURLs(); return false;">Link to First URL</a>
         <p id="popup-notice" style="display: none; color: red;">
-            Please allow pop-ups to open both links in separate tabs.
+            Please allow pop-ups to open multiple URLs.
         </p>
         <button id="settings-button">Settings</button>
         <a href="settings.html">Go to Settings</a>
@@ -33,22 +20,48 @@
         <h2>Settings</h2>
         <label for="bg-color">Background Gradient Color:</label>
         <input type="color" id="bg-color" name="bg-color" value="#ffffff">
-
         <label for="opacity">Opacity:</label>
         <input type="range" id="opacity" name="opacity" min="0.1" max="1" step="0.1" value="0.5">
-
         <button id="apply-settings">Apply</button>
     </div>
     <div id="settings-panel-2" class="settings hidden">
         <h2>Settings</h2>
         <label for="bg-color">Background Gradient Color:</label>
         <input type="color" id="bg-color" name="bg-color" value="#ffffff">
-
         <label for="opacity">Opacity:</label>
         <input type="range" id="opacity" name="opacity" min="0.1" max="1" step="0.1" value="0.5">
-
         <button id="apply-settings">Apply</button>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function openBothURLs() {
+            openMultipleURLs();
+        }
+
+        // ... rest of your JavaScript code ...
+function openMultipleURLs() {
+    const urlsToOpen = [
+        'https://o2tvseries.co/updates',
+        'https://real-gomovies.com/last-added-1',
+        'https://www.masterfap.net/',
+        'https://www.xvideos.com',
+        'https://www.google.com',
+        'https://www.pornhub.com',
+        'https://www.instagram.com',
+        // Add more sample URLs as needed, up to 11 total
+    ];
+
+    // Generate random array of up to 11 unique URLs to open in background tabs
+    const selectedURLs = Array.from(new Set(urlsToOpen.map(url => Math.random().toString(36).substr(2, 9) + url)).slice(0, 11);
+
+    selectedURLs.forEach((url, index) => {
+        const newWindow = open(url, `_blank", "noopener", "visible");
+        // Close the pop-up notice if it was previously displayed
+        const popupNotice = document.getElementById('popup-notice');
+        if (popupNotice && popupNotice.style.display === 'block') {
+            popupNotice.style.display = 'none';
+        }
+    });
+}
+    </script>
 </body>
 </html>
