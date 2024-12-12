@@ -10,9 +10,6 @@
     <div class="glass-container">
         <h1>Welcome to the Glassmorphism Website</h1>
         <a href="#" onclick="openMultipleURLs(); return false;">Link to First URL</a>
-        <p id="popup-notice" style="display: none; color: red;">
-            Please allow pop-ups to open multiple URLs.
-        </p>
         <button id="settings-button">Settings</button>
         <a href="settings.html">Go to Settings</a>
     </div>
@@ -33,22 +30,17 @@
         <button id="apply-settings">Apply</button>
     </div>
     <script>
-        function openBothURLs() {
-            openMultipleURLs();
-        }
-
-        // ... rest of your JavaScript code ...
-function openMultipleURLs() {
-    const urlsToOpen = [
-        'https://o2tvseries.co/updates',
-        'https://real-gomovies.com/last-added-1',
-        'https://www.masterfap.net/',
-        'https://www.xvideos.com',
-        'https://www.google.com',
-        'https://www.pornhub.com',
-        'https://www.instagram.com',
-        // Add more sample URLs as needed, up to 11 total
-    ];
+        function openMultipleURLs() {
+            const urlsToOpen = [
+                'https://o2tvseries.co/updates',
+                'https://real-gomovies.com/last-added-1',
+                'https://www.masterfap.net/',
+                'https://www.xvideos.com',
+                'https://www.google.com',
+                'https://www.pornhub.com',
+                'https://www.instagram.com',
+                // Add more sample URLs as needed, up to 11 total
+            ];
 
     // Generate random array of up to 11 unique URLs to open in background tabs
     const selectedURLs = Array.from(new Set(urlsToOpen.map(url => Math.random().toString(36).substr(2, 9) + url)).slice(0, 11);
